@@ -87,7 +87,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         //设置账号的状态，默认正常状态 1表示正常 0表示锁定
         employee.setStatus(StatusConstant.ENABLE);
 
-        //TODO 设置当前记录创建人id和修改人id
+        //设置当前记录创建人id和修改人id
         employee.setCreateUser(BaseContext.getCurrentId());
         employee.setUpdateUser(BaseContext.getCurrentId());
 
