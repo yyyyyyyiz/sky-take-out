@@ -47,13 +47,13 @@ public class CategoryServiceImpl implements CategoryService {
         //设置账号的状态，默认正常状态 1表示正常 0表示锁定
         category.setStatus(StatusConstant.DISABLE);
 
-        //设置当前记录的创建时间和修改时间
+       /* //设置当前记录的创建时间和修改时间
         category.setCreateTime(LocalDateTime.now());
         category.setUpdateTime(LocalDateTime.now());
 
         //设置当前记录创建人id和修改人id
         category.setCreateUser(BaseContext.getCurrentId());
-        category.setUpdateUser(BaseContext.getCurrentId());
+        category.setUpdateUser(BaseContext.getCurrentId());*/
 
         categoryMapper.insert(category);
     }
@@ -107,8 +107,8 @@ public class CategoryServiceImpl implements CategoryService {
         Category category = Category.builder()
                 .status(status)
                 .id(id)
-                .updateTime(LocalDateTime.now())
-                .updateUser(BaseContext.getCurrentId())
+                /*.updateTime(LocalDateTime.now())
+                .updateUser(BaseContext.getCurrentId())*/
                 .build();
         categoryMapper.update(category);
     }
@@ -134,9 +134,9 @@ public class CategoryServiceImpl implements CategoryService {
         //对象属性拷贝
         BeanUtils.copyProperties(categoryDTO, category);
 
-        //设置当前记录的创建时间和修改时间
+        /*//设置当前记录的创建时间和修改时间
         category.setUpdateTime(LocalDateTime.now());
-        category.setUpdateUser(BaseContext.getCurrentId());
+        category.setUpdateUser(BaseContext.getCurrentId());*/
 
         categoryMapper.update(category);
     }
